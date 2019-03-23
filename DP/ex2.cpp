@@ -12,7 +12,7 @@
 using namespace std;
 
 
-//这种写法不行：
+//这种写法不行,递归有错误,
 
 // long get_max_sub_aux(const vector<int>& nums,int i, vector<long>& r);
 
@@ -36,9 +36,20 @@ using namespace std;
     
 // }
 
+//自底向上
+long get_max_sub(const vector<int> &nums){
+  int f=nums[0];
+  int res=nums[0];
+  for(int i=1;i<nums.size();i++){
+    f=max(f+nums[i],nums[i]);
+    res=max(res,f);
+  }
+  return res;
+}
+
 int main(){
     vector<int> nums={6,-3,-2,7,-15,1,2,2};
   //  cout<<get_max_sub(nums);
-  get_max_sub(nums);
+  cout<<get_max_sub(nums)<<endl;
 }
 
