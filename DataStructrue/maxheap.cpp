@@ -69,7 +69,7 @@ private:
 	int count;
 	int capacity;
 	void shiftUP(int k) {   //向上调整
-		while (k > 1 && data[k] > data[k / 2]) {
+		while (k > 1 && data[k] > data[k / 2]) {//若比父亲结点大，则跟父亲交换
 			swap(data[k], data[k / 2]);
 			k /= 2;
 		}
@@ -77,7 +77,7 @@ private:
 	void shiftDown(int k) { //向下调整
 		while (2 * k <= count) {
 			int j = 2 * k;
-			if (j + 1 <= count && data[j] < data[j + 1])
+			if (j + 1 <= count && data[j] < data[j + 1])// 若有右儿子，且右儿子大于左儿子，j自增
 				++j;
 			if (data[k] > data[j])
 				break;
