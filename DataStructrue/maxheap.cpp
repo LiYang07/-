@@ -89,14 +89,14 @@ private:
 };
 
 int main() {
-	MaxHeap<int> maxheap = MaxHeap<int>(100);
+	MaxHeap<int> maxheap = MaxHeap<int>(5000);
 	srand(time(NULL));
-	for (int i = 0; i < 16; i++)
-		maxheap.insert(rand() % 100);
-	int a[16];
+	for (int i = 0; i <5000 ; i++)
+		maxheap.insert(rand() % 5000);
+	int a[5000];
 	maxheap.printData();
 	maxheap.heapSort(a);
-	for (int i = 0; i < 16; i++)
+	for (int i = 0; i < 5000; i++)
 		cout << a[i] << " ";
 }
 
